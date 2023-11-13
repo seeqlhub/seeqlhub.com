@@ -10,6 +10,31 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+			<style>
+		        /* Custom styling for the search bar */
+		        #search-bar {
+		            margin-bottom: 20px;
+		            width: 80%;
+		            position: relative;
+		        }
+		
+		        #search {
+		            padding: 10px;
+		            border: none;
+		            border-radius: 20px;
+		            width: calc(100% - 20px);
+		            font-style: italic;
+		            color: #333; /* Dark grey text color */
+		        }
+		
+		        #search-icon {
+		            position: absolute;
+		            top: 50%;
+		            right: 10px;
+		            transform: translateY(-50%);
+		            color: #333; /* Dark grey icon color */
+		        }
+		    </style>
 	</head>
 	<body class="right-sidebar is-preload">
 		<div id="page-wrapper">
@@ -65,8 +90,9 @@
 									<div id="content">
 										<!-- Search Bar -->
 										<div id="search-bar">
-										<label for="search">Search: </label>
-										<input type="text" id="search" oninput="filterArticles()">
+										<!--<label for="search">Search: </label> -->
+										<input type="text" id="search" placeholder="Search for blogs and articles" oninput="filterArticles()">
+        									<span id="search-icon" class="fas fa-search"></span>
 										</div>
 										<article class="box post">
 											<header class="style1">
