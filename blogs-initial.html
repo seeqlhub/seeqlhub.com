@@ -63,6 +63,11 @@
 
 								<!-- Content -->
 									<div id="content">
+										<!-- Search Bar -->
+										<div id="search-bar">
+										<label for="search">Search: </label>
+										<input type="text" id="search" oninput="filterArticles()">
+										</div>
 										<article class="box post">
 											<header class="style1">
 												<h2>BLogss!!!!!!!</h2>
@@ -310,6 +315,24 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+		        function filterArticles() {
+		            var input = document.getElementById('search').value.toLowerCase();
+		            var articles = document.querySelectorAll('#content article');
+		            articles.forEach(function (article) {
+		                var articleTitle = article.querySelector('header h2').innerText.toLowerCase();
+		                if (articleTitle.includes(input)) {
+		                    article.style.display = 'block';
+		                } else {
+		                    article.style.display = 'none';
+		                }
+		            });
+		        }
+		
+		        document.addEventListener('DOMContentLoaded', function () {
+		            filterArticles();
+		        });
+		    </script>
+			
 	</body>
 </html>
